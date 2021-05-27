@@ -17,7 +17,7 @@ class ShowDialog {
               child: AlertDialog(
                 shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.0)),
-                title: Text( !status ? "Başarısız" : "Başarılı"  ),
+                title: Icon(!status ? Icons.remove_circle_rounded : Icons.check_circle,color: !status ? Colors.red : Colors.green,size: 25,),
                 content: Text(description),
               ),
             ),
