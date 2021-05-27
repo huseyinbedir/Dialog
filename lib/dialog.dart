@@ -6,9 +6,9 @@ class ShowDialog {
   static Future showDialogGeneral({
     @required BuildContext context,
     @required bool status,
+    @required String description,
   }) {
     return showGeneralDialog(
-        barrierColor: Colors.black.withOpacity(0.5),
         transitionBuilder: (context, a1, a2, widget) {
           return Transform.scale(
             scale: a1.value,
@@ -17,8 +17,8 @@ class ShowDialog {
               child: AlertDialog(
                 shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16.0)),
-                title: Text('Hello!!'),
-                content: Text('How are you?'),
+                title: Text( !status ? "Başarısız" : "Başarılı"  ),
+                content: Text(description),
               ),
             ),
           );
